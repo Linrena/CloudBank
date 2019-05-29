@@ -32,19 +32,12 @@ angular.module('todoController', [])
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.todos = data; // assign our new list of todos
 					});
-
-
-
-
-
 			}
-
-
 		};
 
 		// DELETE ==================================================================
 		// delete a todo after checking it
-		$scope.deleteTodo = function(id) {
+		$scope.deleteCustomer = function(id) {
 			$scope.loading = true;
 
 			Todos.delete(id)
