@@ -10,38 +10,19 @@
 	<title>Cloud Bank</title>
 
 	<!-- SCROLLS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-	<style>
-		html 					{ overflow-y:scroll; }
-		body 					{ padding-top:50px; }
-		#customer-list 				{ margin-bottom:30px; }
-		#customer-form 	 			{ margin-bottom:50px; }
-	</style>
-	<style type="text/css">
-		.box {
-		width: 700px;
-		height: 350px;
-		margin: 0 auto;
-		background: url(http://img0.imgtn.bdimg.com/it/u=302895674,103930042&fm=26&gp=0.jpg) no-repeat center;
-		}
-		</style>
-	<!-- SPELLS -->
-	<script src="//cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
-
-	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
-	<script src="js/services/todos.js"></script> <!-- load our todo service -->
-	<script src="js/core.js"></script> <!-- load our main application -->
-
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	
 </head>
+
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
-	<div class="container box">
+	<div class="container">
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
 			<h1>Welcome to Cloud Bank</h1>
-			<h2>Now we have <span class="label label-info">{{ todos.length }}</span> customers</h2>
+			<h2>Now we have <span class="label label-info">{{ Todos.length }}</span> customers</h2>
 		</div>
 
 		<!-- TODO LIST -->
@@ -64,27 +45,68 @@
 		-->
 
 		<!-- FORM TO CREATE Customers -->
-		<div id="create-form" class="row">
-			<div class="text-center">
-				<form>
-					<div class="form-group">
+	
+		<div class=" text-center" >
+				
+					<div class="form-group"  >
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control " placeholder="Name" ng-model="formData.account">
-						<input type="password" class="form-control " placeholder="Password" ng-model="formData.password">
+						<input type="text" class="form-control" placeholder="Name" ng-model="formData.account" >
+					
+						<br>
+						<input type="password"   class="form-control" placeholder="Password" ng-model="formData.password">
 					</div>
-
+					<br>
 					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createCustomer()">Create</button>
-				</form>
-				<br>
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createCustomer()" >Create</button>
+				
+				<br></br>
 				<a href="login.html" target="_self">已有帐号，登录</a>
-			</div>
 		</div>
-		<div>
-			<a href="aboutUs.html">关于我们</a>
-			<a href="joinCloudBank.html">加入我们</a>
+		
+		<div id="footer" class='text-center text-muted'>
+			<br>
+			<br>
+			<P>
+				<a href="aboutUs.html" target="_blank">关于我们</a>
+				<a href="joinCloudBank.html">加入我们</a>
+			</P>
 		</div>
 
 	</div>
+	<script>
+		var app = angular.module('meanTodo', []);
+		app.controller('mainController', function($scope) {
+    		$scope.createCustomer() = function() {
+				window.alert("aaa");
+    	};
+	});
+	</script>
+
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#customer-list 				{ margin-bottom:30px; }
+		#customer-form 	 			{ margin-bottom:50px; }
+	</style>
+	<style type="text/css">
+		body{
+			background-size: cover;
+			background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1363423391,806294831&fm=26&gp=0.jpg);
+		}
+		footer {
+			clear: both;
+    		line-height: 24px;
+
+		}	
+		
+		
+	</style>
+	<!-- SPELLS -->
+	<script src="https://cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
+
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/todos.js"></script> <!-- load our todo service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+	
 </body>
 </html>

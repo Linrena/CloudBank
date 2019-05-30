@@ -35,7 +35,37 @@ angular.module('todoController', [])
 					
 			}
 		};
-
+		//登陆时检查用户的账户密码是否正确
+        /******************* 
+ 		$scope.login_click = function() {
+	            console.log("进入了login_click");
+	            var usernameexist = false;
+	            var pwdcorrect = true;
+	            Todos.get().success(function(data) {
+	                for (var i in data) {
+	                    if (data[i]["account"] == $scope.formData.username) {
+	                        usernameexist = true;
+	                        if (data[i]["password"] == $scope.formData.password) {
+	                            pwdcorrect = true;
+	                        }
+	                        else {
+	                            pwdcorrect = false;
+	                        }
+	                    }
+	                }
+	                if (usernameexist == false) {
+	                    alert("您所输入的账户不错在");
+	                }
+	                else if (pwdcorrect == false) {
+	                    alert("密码错误！");
+	                }
+	                else {
+	                    alert("用户名密码正确！");
+	                    window.location.href = "http://148.100.86.238:8084/customer.html";
+	                }
+	            })
+	        };
+		*************/
 		// DELETE ==================================================================
 		// delete a todo after checking it
 		/** $scope.deleteCustomer = function(id) {
