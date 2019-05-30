@@ -1,9 +1,8 @@
 angular.module('todoController', [])
-
-	// inject the Todo service factory into our controller
-	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
-		$scope.formData = {};
-		$scope.loading = true;
+    //用户业务操作customer.html对应js脚本
+	
+	.controller('mainCustomer', ['$scope','$http','Todos', function($scope, $http, Todos) {
+		
 
 		// GET =====================================================================
 		// when landing on the page, get all todos and show them
@@ -20,8 +19,8 @@ angular.module('todoController', [])
 
 			// validate the formData to make sure that something is there
 			// if form is empty, nothing will happen
-			if ($scope.formData.account ||$scope.formData.password != undefined) {
-				$scope.loading = true; 
+			if ($scope.formData.text != undefined) {
+				$scope.loading = true;
 
 				// call the create function from our service (returns a promise object)
 				Todos.create($scope.formData)
@@ -32,13 +31,12 @@ angular.module('todoController', [])
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.todos = data; // assign our new list of todos
 					});
-					
 			}
 		};
 
 		// DELETE ==================================================================
 		// delete a todo after checking it
-		/** $scope.deleteCustomer = function(id) {
+		$scope.deleteCustomer = function(id) {
 			$scope.loading = true;
 
 			Todos.delete(id)
@@ -48,5 +46,4 @@ angular.module('todoController', [])
 					$scope.todos = data; // assign our new list of todos
 				});
 		};
-		*/
 	}]);

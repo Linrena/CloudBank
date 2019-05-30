@@ -2,20 +2,28 @@ var mongoose = require('mongoose');
 
 // Define the schema
 module.exports = mongoose.model('Todo', {
-    name: {
+    text: {
         type: String,
         default: ''
     },
 
-    code: {
-        type: String,
-        default: ''
+    num: {
+        type: Number,
+        default: 0
     },
 
     value:{
-        type: Number,
-        default:0
-    }
+        type: String,
+        default: ''
+    },
 
+    account:{
+        type:String,
+        default:''
+    },
+    password: {
+        type: password,
+        default:''
+    }
 
 });
