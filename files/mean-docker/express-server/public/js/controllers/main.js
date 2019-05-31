@@ -32,7 +32,7 @@ angular.module('todoController', [])
 						$scope.loading = false;
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.todos = data; // assign our new list of todos
-						window.location.href="../../login.html";
+						window.location.href="js/login.html";
 					});
 					
 			}
