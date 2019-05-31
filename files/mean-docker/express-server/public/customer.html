@@ -16,7 +16,7 @@
 
 	<!-- SPELLS -->
 	<script src="https://cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
-
+	<script src="js/controllers/main.js"></script>
 	<script src="js/customer.js"></script><!--加载cutomer.js处理mainCustomer-->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
@@ -45,7 +45,9 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div id = "customer-list" class="jumbotron text-center">
-			<h1>Hello! Customer {{todos.account}}</h1>
+			
+			<h1 id="accountname"></h1>
+			
 			<h2>Now your account have <span class="label label-info">{{ todos.num }}</span></h2>
 		</div>
         <div class="save-restore" class="jumbotron text-center">

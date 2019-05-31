@@ -1,5 +1,6 @@
 angular.module('todoController', [])
 
+	var myVar = {account:"", password:""}
 	// inject the Todo service factory into our controller
 	.controller('mainController', ['$scope','$http','Todos', function($scope, $http, Todos) {
 		$scope.formData = {};
@@ -22,7 +23,8 @@ angular.module('todoController', [])
 			// if form is empty, nothing will happen
 			if ($scope.formData.account ||$scope.formData.password != undefined) {
 				$scope.loading = true; 
-
+					myVar.account=$scope.formData.account;
+					myVar.password=$scope.formData.password;
 				// call the create function from our service (returns a promise object)
 				Todos.create($scope.formData)
 
@@ -36,6 +38,7 @@ angular.module('todoController', [])
 					
 			}
 		};
+		document.getElementById("accountname").innerHTML ="Hello customer, "+ myVar.account;
 		//登陆时检查用户的账户密码是否正确
         
 		$scope.login_click = function() {
