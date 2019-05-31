@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!--已有账号登录 -->
-<html ng-app="meanTodo">
+<html ng-app="loginTodo">
 <head>
 	<!-- META -->
 	<meta charset="utf-8">
@@ -23,7 +23,7 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="mainController">
+<body ng-controller="loginController">
 	<div class="container">
 
 		<!-- HEADER AND TODO COUNT -->
@@ -40,23 +40,59 @@
 				<form>
 					
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-					Account :<input type="number" class="form-control"      ng-model="login-account">
-					Password:<input type="password" class="form-control"  ng-model="login-password">
+					<input type="number" class="form-control"     placeholder="Account..." ng-model="login-account">
+					<br>
+					<input type="password" class="form-control" placeholder="Password..." ng-model="login-password">
 					
 					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="login-click">Login</button>
+					<br>
+					<button type="submit" class="btn" ng-click="login_click"><a href="customer.html">Login</a></button>
 				</form>
-                <a href="customer.html" target="_self">在数据库中确认了帐号后登录（此处为后门，可以跳转到用户操作页面）</a>
+				<br>
+                
 			</div>
 		</div>
 	</div>
 	
-
+	<div id="footer" class='text-center text-muted'>
+			<br>
+			<br>
+			<P>
+				<a href="aboutUs.html" target="_blank">关于我们</a>
+				<a href="joinCloudBank.html">加入我们</a>
+			</P>
+	</div>
+	<div  class='text-center text-muted'>
+				<br>
+				<br>
+				<P>
+					copyright @ 2019-forever  Cloud Bank
+				</P>
+	</div>
 	<!-- SPELLS -->
 	<script src="https://cdn.bootcss.com/angular.js/1.2.16/angular.min.js"></script><!-- load angular -->
 
 	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
-	
+	<style type="text/css">
+		body{
+			background-size: cover;
+			background-image: url(https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1363423391,806294831&fm=26&gp=0.jpg);
+		}
+		footer {
+			clear: both;
+    		line-height: 24px;
+
+		}	
+	</style>
+
+	<script>
+		var app = angular.module('loginTodo', []);
+		app.controller('loginController', function($scope) {
+    		$scope.loginclick= function() {
+				<a href="customers.html"></a>
+    	};
+	});
+	</script>
 </body>
 </html>
