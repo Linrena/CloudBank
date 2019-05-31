@@ -23,8 +23,8 @@
 
 </head>
 <!-- SET THE CONTROLLER -->
-<body ng-controller="loginController">
-	<div class="container">
+<body ng-controller="mainController">
+	<div class="container box">
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
@@ -40,13 +40,13 @@
 				<form>
 					
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-					<input type="number" class="form-control"     placeholder="Account..." ng-model="login-account">
+					<input type="account" class="form-control"     placeholder="Account..." ng-model="formData.account">
 					<br>
-					<input type="password" class="form-control" placeholder="Password..." ng-model="login-password">
+					<input type="password" class="form-control" placeholder="Password..." ng-model="formData.password">
 					
 					<!-- createToDo() WILL CREATE NEW TODOS -->
 					<br>
-					<button type="submit" class="btn" ng-click="login_click">Login</button>
+					<button type="submit" class="btn" ng-click="login_click()">Login</button>
 				</form>
 				<br>
                 

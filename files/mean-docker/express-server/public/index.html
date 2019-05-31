@@ -17,7 +17,7 @@
 
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
-	<div class="container">
+	<div class="container box">
 		
 		
 		<div id="header" style="background-color:rgb(239, 239, 239); height: 20px;" >
@@ -40,7 +40,7 @@
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
 			<h1>Welcome to Cloud Bank</h1>
-			<h2>Now we have <span class="label label-info">{{ Todos.length }}</span> customers</h2>
+			<h2>Now we have <span class="label label-info">{{ todos.length }}</span> customers</h2>
 		</div>
 
 		<!-- TODO LIST -->
@@ -68,7 +68,7 @@
 					
 					<div class="form-group"  >
 						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control" placeholder="Name" ng-model="formData.account" >
+						<input type="account" class="form-control" placeholder="Account" ng-model="formData.account" >
 					
 						<br>
 						<input type="password"   class="form-control" placeholder="Password" ng-model="formData.password">
@@ -98,14 +98,7 @@
 		</div>
 
 	</div>
-	<script>
-		var app = angular.module('meanTodo', []);
-		app.controller('mainController', function($scope) {
-    		$scope.createCustomer() = function() {
-				window.alert("aaa");
-    	};
-	});
-	</script>
+	
 
 	<style>
 		html 					{ overflow-y:scroll; }

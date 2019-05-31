@@ -26,8 +26,8 @@ module.exports = function (app) {
 
         // create a todo, information comes from AJAX request from Angular
         Todo.create({
-            text: req.body.text,
-            value: req.body.value,
+            account: req.body.account,
+            password: req.body.password,
             done: false
         }, function (err, todo) {
             if (err)
@@ -38,7 +38,7 @@ module.exports = function (app) {
         });
 
     });
-
+    /*
     // delete a todo
     app.delete('/api/todos/:todo_id', function (req, res) {
         Todo.remove({
@@ -50,7 +50,8 @@ module.exports = function (app) {
             getTodos(res);
         });
     });
-
+    */
+    
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
