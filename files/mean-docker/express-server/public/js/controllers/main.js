@@ -23,8 +23,7 @@ angular.module('todoController', [])
 			// if form is empty, nothing will happen
 			if ($scope.formData.account ||$scope.formData.password != undefined) {
 				$scope.loading = true; 
-					myVar.account=$scope.formData.account;
-					myVar.password=$scope.formData.password;
+					
 				// call the create function from our service (returns a promise object)
 				Todos.create($scope.formData)
 
@@ -38,7 +37,7 @@ angular.module('todoController', [])
 					
 			}
 		};
-		document.getElementById("accountname").innerHTML ="Hello customer, "+ myVar.account;
+		
 		//登陆时检查用户的账户密码是否正确
         
 		$scope.login_click = function() {
@@ -65,10 +64,12 @@ angular.module('todoController', [])
 				else {
 				    alert("用户名密码正确！");
 				    window.location.href = "../../customer.html";
+					myVar.account =$scope.formData.account;
+					myVar.password=$scope.formData.password;
 				}
 			})
 		};
-			
+		document.getElementById("account-name").innerHTML ="Hello customer, "+ myVar.account;
 		// DELETE ==================================================================
 		// delete a todo after checking it
 		/** $scope.deleteCustomer = function(id) {
